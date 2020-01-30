@@ -1,6 +1,6 @@
 {% set name = "reg" %}
-{% set version = "0.11" %}
-{% set sha256 = "ce61bc8c37d58477675d8eb4922ef26c1446e1691249de613f629ef286addf04" %}
+{% set version = "0.12" %}
+{% set sha256 = "e614db46d661d3967657b365fc82aba5f4cd7540d8d81a5fc77dc5adfb5e79f4" %}
 
 package:
   name: {{ name|lower }}
@@ -13,17 +13,17 @@ source:
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.4
     - setuptools
 
   run:
-    - python
+    - python >=3.4
     - repoze.lru
 
 test:
