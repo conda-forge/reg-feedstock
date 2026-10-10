@@ -1,6 +1,6 @@
 {% set name = "reg" %}
-{% set version = "0.12" %}
-{% set sha256 = "e614db46d661d3967657b365fc82aba5f4cd7540d8d81a5fc77dc5adfb5e79f4" %}
+{% set version = "1.0.0" %}
+{% set sha256 = "1eccf0348ae7e262aadb7645efa6d563d1e72f0483ca8b91b426cdc135575af3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
